@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hello world</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+   <div class="container">
+      <h1 data-bind="text: pageHeading"></h1>
+      <hr>
+
+      <p>First name: <strong data-bind="text: firstName"></strong></p>
+      <p>Last name: <strong data-bind="text: lastName"></strong></p>
+      <p>Full name: <strong data-bind="text: fullName"></strong></p>
+      <button data-bind="click: makeLastNameUpperCase">Cap Last Name</button>
+      <button data-bind="click: makeFullNameUpperCase">Cap Full Name</button>
+      <button data-bind="click: makeFullNameLowerCase">Lower Full Name</button>
+      <div class="mb-3"></div>
+      <h2 class="mb-1">Edit</h2>
+      <label for="first-name">
+         Edit full name:
+         <input id="first-name" class="d-block" data-bind="value: firstName" />
+      </label>
+      <label for="last-name">
+         Edit last name:
+         <input id="last-name" class="d-block" data-bind="value: lastName" />
+      </label>
+   </div>
+
+   
+   
+   <script type="text/javascript" src="knockout/knockout-js-production.min.js"></script>
+   <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
