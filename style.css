@@ -1,6 +1,12 @@
 /* resets */
 :root {
    --primary-color: #ebebeb;
+   --table-border-width: 1px;
+   --table-border-color: #e4e4e4;
+   --table-header-tr-color: #c9ceff;
+   --table-even-tr-color: #ebebeb;
+   --table-header-row-text-color: #000;
+   --table-general-row-text-color: #000;
 }
 * {
    box-sizing: border-box;
@@ -20,6 +26,20 @@ td {
 hr {
    margin: 0.8rem 0;
    border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+}
+
+/* text */
+.text--danger {
+   color: #ff0000;
+}
+.text--warning {
+   color: #ffc107;
+}
+.text--success {
+   color: #28a745;
+}
+.text--info {
+   color: #17a2b8;
 }
 
 .container {
@@ -78,6 +98,9 @@ hr {
    padding-bottom: 2rem !important; 
 }
 
+.d-none {
+   display: none; 
+}
 .d-block {
    display: block !important;
 }
@@ -133,15 +156,17 @@ table {
    border-collapse: collapse;
 }
 thead tr {
-   background-color: #c9ceff;
+   background-color: var(--table-header-tr-color);
 }
 tbody tr:nth-child(even) {
-   background-color: var(--primary-color);
+   background-color: var(--table-even-tr-color);
 }
 th,
 td,
 table {
-   border: 1px solid #e4e4e4;
+   border: 1px solid;
+   border-color: var(--table-border-color);
+   border-width: var(--table-border-width);
 }
 th,
 td {
@@ -152,6 +177,12 @@ th {
 }
 td {
    letter-spacing: 1px;
+}
+thead th {
+   color: var(--table-header-row-text-color);
+}
+tbody td {
+   color: var(--table-general-row-text-color);
 }
 
 
@@ -166,9 +197,6 @@ td {
 .table-container--mails thead tr th:first-child {
    width: 20%;
 }
-.table-container--mails thead tr th:nth-child(3) {
-   width: 30%;
-}
 .table-container tbody tr td:nth-child(3),
 .table-container tbody tr td:last-child {
    text-align: center;
@@ -178,6 +206,34 @@ td {
    width: 100%;
 }
 
+/* mails table */
+.table-container--mails.mail-open {
+   grid-template-columns: 65% 35%;
+}
+.table-container--mails {
+   --table-header-tr-color: #009688;
+   --table-border-color: #8bcdc7;
+   --table-even-tr-color: #eef7e3;
+   --table-header-row-text-color: #fff;
+}
+.table-container--mails thead tr th:nth-child(3) {
+   width: 30%;
+}
+.table-container--mails tbody tr td {
+   overflow-wrap: break-word;
+}
+
+.answers-table {
+   --table-border-width: 2px;
+   --table-header-tr-color: #1764d8;
+   --table-border-color: #967ff3;
+   --table-even-tr-color: #1764d821;
+   --table-header-row-text-color: #fff;
+   max-width: 750px;
+}
+.answers-table thead th:last-child {
+   width: 20%;
+}
 
 /* navigation */
 .nav-menu {
