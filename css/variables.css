@@ -1,0 +1,11 @@
+:root {
+   --primary-color: #ebebeb;
+   --table-border-width: 1px;
+   --table-border-color: #e4e4e4;
+   --table-header-tr-color: #c9ceff;
+   --table-even-tr-color: #ebebeb;
+   --table-header-row-text-color: #000;
+   --table-general-row-text-color: #000;
+   --th-letter-spacing: 1px;
+   --td-letter-spacing: 1px;
+}

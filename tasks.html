@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Saving data - knockout js</title>
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/tasks.css">
+   
+   <script type="text/javascript" src="libs/jquery/jquery.min.js"></script>
+   <script type="text/javascript" src="libs/knockout/knockout-js-production.min.js"></script>
+</head>
+<body>
+   
+   <div class="container px-0 page-layout">
+      <form class="add-task-form" data-bind="submit: addTask">
+         <label for="task">Add task</label>
+         <input type="text" name="task" id="task" placeholder="write your new task here..." data-bind="value: newTaskText">
+         <div class="mb-3" data-bind="visible: taskTextEmptyError">Please write your task in the above field.</div>
+         <input type="submit" value="Add">
+      </form>
+
+      <div class="tasks-container">
+         <div class="tasks-table-container">
+            <table class="tasks-table">
+               <thead>
+                  <tr>
+                     <th>Status</th>
+                     <th>Task Description</th>
+                     <th>Action</th>
+                  </tr>
+               </thead>
+               <tbody data-bind="foreach: tasks">
+                  <tr data-bind="css: { completed: isDone(), incompleted: !isDone() }">
+                     <td class="td-task-status">
+                        <input type="checkbox" data-bind="checked: isDone">
+                     </td>
+                     <td class="td-task-content" data-bind="text: title"></td>
+                     <td class="td-task-action">
+                        <button class="btn-task-remove">Delete</button>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+
+   
+   
+   <script type="text/javascript" src="js/tasks.js"></script>
+</body>
+</html>

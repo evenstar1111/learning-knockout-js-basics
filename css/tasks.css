@@ -1,0 +1,109 @@
+body,
+html {
+   height: 100%;
+}
+
+.page-layout {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.add-task-form,
+.add-task-form label,
+.add-task-form input:not([type="submit"]),
+.tasks-container {
+   width: 100%;
+}
+.add-task-form {
+   padding: 4rem 3rem 5rem;
+   background-color: #f0f8ff;
+}
+.add-task-form label {
+   display: block;
+   margin-bottom: 8px;
+   color: #626262;
+   font-weight: 500;
+   font-size: 25px;
+}
+.add-task-form input {
+   height: 45px;
+}
+.add-task-form input:not([type="submit"]) {
+   margin-bottom: 15px;
+}
+.add-task-form input[type="submit"] {
+   height: auto;
+   background-color: #0000;
+   color: #2a9bff;
+   border: 1px solid #2a9bff;
+   font-weight: 500;
+   font-size: 15px;
+   cursor: pointer;
+   text-transform: uppercase;
+   padding: 0.6em 3em;
+   transition: all 200ms ease-in-out;
+}
+.add-task-form input[type="submit"]:hover,
+.add-task-form input[type="submit"]:focus {
+   background-color: #2a9bff26;
+}
+
+.tasks-table-container {
+   --table-header-tr-color: #797dff;
+   --table-header-row-text-color: #e4e4ff;
+   --th-letter-spacing: 0.5px;
+   --td-letter-spacing: 0.1px;
+}
+.tasks-table .td-task-status,
+.tasks-table .td-task-action {
+   text-align: center;
+}
+.tasks-table .td-task-status {
+   width: 20%;
+}
+.tasks-table .btn-task-remove {
+   padding: 0.5em 1em;
+   font-size: 12px;
+   font-weight: 600;
+   text-transform: uppercase;
+   border-radius: 4px;
+   color: #f00;
+   background-color: #0000;
+   border: 1px solid #f00;
+   transition: all 200ms ease-in-out;
+}
+.tasks-table .btn-task-remove:hover,
+.tasks-table .btn-task-remove:focus {
+   background-color: #ff000024;
+}
+.tasks-table .btn-task-remove:focus {
+   box-shadow: 0 0 0 3px #ff000057;
+}
+.tasks-table tbody tr:nth-child(even) {
+   background-color: #0000;
+}
+.tasks-table tr.completed,
+.tasks-table tbody tr:nth-child(even).completed {
+   background-color: #00dd0921;
+}
+.tasks-table tr.incompleted,
+.tasks-table tbody tr:nth-child(even).incompleted {
+   background-color: #ff59000d;
+}
+
+@media (min-width: 992px) {
+   .page-layout,
+   .add-task-form,
+   .tasks-container {
+      height: 100%;
+   }
+   .page-layout {
+      flex-wrap: nowrap;
+   }
+   .add-task-form {
+      max-width: 420px;
+   }
+   .tasks-container {
+      overflow: auto;
+   }
+}
